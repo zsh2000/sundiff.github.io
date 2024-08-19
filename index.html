@@ -45,9 +45,9 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">SUNDiff:  <br> Bridging Generative and Discriminative Learning with Diffusion Models  <br> for Dense Visual Perception</h1>
-          <h4 class="title is-4">ICCV 2023</h4>
-          <div class="is-size-5 publication-authors">
+          <h2 class="title is-2 publication-title">SUNDiff: Bridging Generative and Discriminative Learning with Diffusion Models for Dense Visual Perception</h2>
+<!--           <h4 class="title is-4">ICCV 2023</h4> -->
+<!--           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://zsh2000.github.io/">Shuhong Zheng</a><sup>1,*</sup>,</span>
             <span class="author-block">
@@ -59,12 +59,12 @@
               <a href="https://yxw.web.illinois.edu/">Yu-Xiong Wang</a><sup>1</sup>
             </span>
   
-          </div>
+          </div> -->
 
-          <div class="is-size-5 publication-authors">
+<!--           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign,</span>
             <span class="author-block"><sup>2</sup>Carnegie Mellon University</span>
-          </div>
+          </div> -->
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -135,6 +135,9 @@
 
 
 
+  A single, unified diffusion-based model for both generative and discriminative learn-
+ing
+
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -142,7 +145,28 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-           <p>
+
+          <p>
+          Beyond high-fidelity image synthesis, diffusion models have recently exhibited
+          promising results in visual perception tasks. However, most existing works treat
+          diffusion models as a standalone component for perception tasks, employing them
+          either solely for off-the-shelf data augmentation or as mere feature extractors,
+          which results in sub-optimal performance. 
+          </p>
+            <p>
+          Motivated by the unique diffusion-denoising process inherent in diffusion models, we propose leveraging the generative process of diffusion models to benefit their own discriminative performance.
+          To this end, we introduce an innovative unified diffusion-based framework SUNDiff that addresses both generative and discriminative tasks simultaneously. SUNDiff achieves so by creating consistent multi-modal data through its generation
+          process for discriminative dense pixel-level perception tasks. Importantly, SUNDiff optimizes the utilization of the created diverse and faithful data by leveraging a novel self-improving learning mechanism.
+          </p>
+          
+              <p>
+          Comprehensive experimental evaluations validate the effectiveness of our framework, showcasing consistent performance improvements across various discriminative backbones and high-quality
+          data generation characterized by both realism and usefulness.
+          </p>
+
+
+          
+<!--            <p>
           Multi-task visual learning is a critical aspect of computer vision. 
           Current research predominantly concentrates on the multi-task dense prediction setting, 
           which overlooks the intrinsic 3D world and its multi-view consistent structures, and lacks the 
@@ -159,7 +183,7 @@
           Extensive evaluations on both synthetic and realistic benchmarks demonstrate that MuvieNeRF is capable of simultaneously 
           synthesizing different scene properties with promising visual quality, even outperforming conventional discriminative models in various settings. 
           Notably, we show that MuvieNeRF exhibits universal applicability across a range of NeRF backbones.
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
