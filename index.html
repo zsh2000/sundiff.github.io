@@ -187,6 +187,24 @@
 </split-view> -->
   
 
+  <section class="section">
+  <div class="column is-full-width">
+<!--   <div class="container is-max-desktop"> -->
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+<!--         <h2 class="title is-3">SUNDiff Pipeline</h2> -->
+        <div class="content has-text-justified">
+         A single, unified diffusion-based model SUNDiff bridging generative and discriminative learning
+        <div align="center"><img src="./static/images/pipeline_web.png" alt="" width=90% /></span></div>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+      </div>
+</section>
+  
   
 <!-- <section class="hero teaser">
   <div class="container is-max-desktop">
@@ -202,10 +220,6 @@
   </div>
 </section> -->
 
-
-
-  A single, unified diffusion-based model for both generative and discriminative learn-
-ing
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -274,17 +288,18 @@ ing
 
 
 
-<section class="section">
+    <section class="section">
   <div class="column is-full-width">
 <!--   <div class="container is-max-desktop"> -->
 
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">MuvieNeRF Pipeline</h2>
+        <h2 class="title is-3">SUNDiff Pipeline</h2>
         <div class="content has-text-justified">
-        MuvieNeRF is a unified framework for multi-task view synthesis equipped with Cross-View Attention (CVA)
-and Cross-Task Attention (CTA) modules. It predicts multiple scene properties for arbitrary 3D coordinates with nearby-view annotations.
+         Our SUNDiff framework is a unified diffusion model with two sets of parameters. The data creation parameter θ<sub>C</sub> generates synthetic samples, while the data exploitation
+parameter θ<sub>E</sub> performs discriminative learning with both the original and the synthetic samples. The
+creation parameter θ<sub>C</sub> gets self-improved during optimization.
         <div align="center"><img src="./static/images/pipeline_web.png" alt="" width=90% /></span></div>
         </div>
       </div>
@@ -293,6 +308,9 @@ and Cross-Task Attention (CTA) modules. It predicts multiple scene properties fo
       </div>
 </section>
 
+  
+
+  
     <section class="section">
   <div class="column is-full-width">
     <!-- Paper video. -->
@@ -305,39 +323,74 @@ and Cross-Task Attention (CTA) modules. It predicts multiple scene properties fo
           <h3 class="title is-4">Comparison with Baselines</h3>
         <div class="content has-text-justified">
           <p>
-            We conduct experiments on two datasets: <a href="https://arxiv.org/abs/1906.05797">Replica</a> and <a href="https://openaccess.thecvf.com/content_ICCV_2017/papers/McCormac_SceneNet_RGB-D_Can_ICCV_2017_paper.pdf">SceneNet RGB-D</a>. 
+            We show the qualitative results on surface normal task in NYUv2 and multi-task benchmarks NYUD-MT and PASCAL-Context, showing the performance boost after building our SUNDiff on existing methods.
+<!--             
+            conduct experiments on two datasets: <a href="https://arxiv.org/abs/1906.05797">Replica</a> and <a href="https://openaccess.thecvf.com/content_ICCV_2017/papers/McCormac_SceneNet_RGB-D_Can_ICCV_2017_paper.pdf">SceneNet RGB-D</a>. 
             Five tasks beyond RGB are chosen: surface normal prediction (SN), 
             shading prediction (SH), edge detection (ED), keypoint detection (KP) and semantic label prediction (SL). Baseline methods include the state-of-the-art discriminative model
             <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136870506.pdf">InvPT</a>, single-task NeRF model
             <a href="https://shuaifengzhi.com/Semantic-NeRF/">Semantic-NeRF</a> and naive multi-task NeRF model 
-            <a href="https://openaccess.thecvf.com/content/WACV2023/papers/Zhang_Beyond_RGB_Scene-Property_Synthesis_With_Neural_Radiance_Fields_WACV_2023_paper.pdf">SS-NeRF</a>.
+            <a href="https://openaccess.thecvf.com/content/WACV2023/papers/Zhang_Beyond_RGB_Scene-Property_Synthesis_With_Neural_Radiance_Fields_WACV_2023_paper.pdf">SS-NeRF</a>. -->
           </p>
           
           <p>
-            Qualitative comparison on Replica dataset:
+            Qualitative comparison for surface normal on NYUv2 dataset:
           </p>
         
           <div align="center"><img src="./static/images/replica.png" alt="" width=85% /></span></div>
           <p>
-            Qualitative comparison on SceneNet RGB-D dataset:
+            Qualitative comparison for depth estimation, surface normal estimation, and semantic segmentation on NYUD-MT dataset:
           </p>
           <div align="center"><img src="./static/images/scenenet.png" alt="" width=70% /></span></div>
         </div>
-
-          <h3 class="title is-4">Out-of-distribution Generalization</h3>
-        <div class="content has-text-justified">
-          <p>
-            The knowledge of multi-task synergy learned during training benefits generalization on out-of-distribution datasets, boosting the performance of 
-            novel view RGB synthesis, even when 2D task signals from input views are unavailable.
-          </p>
           
           <p>
+            Qualitative comparison for semantic segmentation, human parsing, saliency detection, and surface normal estimation on PASCAL-Context dataset:
+          </p>
+          <div align="center"><img src="./static/images/scenenet.png" alt="" width=70% /></span></div>
+        </div>
+        
+
+          <h3 class="title is-4">Multi-modal Generation</h3>
+        <div class="content has-text-justified">
+          <p>
+            Besides the evaluations on how powerful our SUNDiff is from the discriminative perspective. 
+            Below we also show the high quality of the generated multi-modal data, which are not only realistic but also useful for applications like data augmentation.
+          </p>
+
+           <p>
+            The generated multi-modal data with SUNDiff trained on surface normal task on NYUv2:
+             <div align="center"><img src="./static/images/scenenet.png" alt="" width=70% /></span></div>
+          </p>
+
+
+          <p>
+            The generated multi-modal data with SUNDiff trained on multiple tasks of depth estimation, surface normal estimation, and semantic segmentation on NYUD-MT:
+             <div align="center"><img src="./static/images/scenenet.png" alt="" width=70% /></span></div>
+          </p>
+
+          <p>
+            The generated multi-modal data with SUNDiff trained on multiple tasks of semantic segmentation, human parsing, saliency detection, and surface normal estimation on PASCAL-Context:
+             <div align="center"><img src="./static/images/scenenet.png" alt="" width=70% /></span></div>
+          </p>
+
+
+          <p>
+            When using the generated samples from our SUNDiff and the same number
+of additional unlabeled real images in the NYUv2 dataset. When using the generated data, we could
+achieve comparable performance with the unlabeled real captured data, demonstrating the good
+quality of the synthetic data from our SUNDiff framework.
+             <div align="center"><img src="./static/images/scenenet.png" alt="" width=70% /></span></div>
+          </p>
+
+          
+<!--           <p>
             Four out-of-distribution datasets <a href="http://www.scan-net.org/">ScanNet</a>, 
             <a href="https://theairlab.org/tartanair-dataset/">TartanAir</a>, 
             <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Yao_BlendedMVS_A_Large-Scale_Dataset_for_Generalized_Multi-View_Stereo_Networks_CVPR_2020_paper.pdf">BlendedMVS</a>, 
             <a href="https://bmild.github.io/llff/">LLFF</a> (from left to right, top to bottom) are evaluated:
           </p>
-          <div align="center"><img src="./static/images/ood.png" alt="" width=85% /></span></div>
+          <div align="center"><img src="./static/images/ood.png" alt="" width=85% /></span></div> -->
         </div>
 <!--         <div class="columns is-vcentered interpolation-panel">
           <div class="column is-3 has-text-centered">
