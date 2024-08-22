@@ -35,6 +35,7 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="./dist/split-view.js"></script>
 </head>
 <body>
 
@@ -119,6 +120,18 @@
   </div>
 </section>
 
+
+<split-view>
+  <picture slot="top">
+    <img src="./static/images/pic_1.png" alt="Day" />
+  </picture>
+  <picture slot="bottom">
+    <img src="./static/images/pic_2.png" alt="Night" />
+  </picture>
+</split-view>
+  
+
+  
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
